@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css'
 const pageTitle = '私について'
 
 const identify = {
@@ -11,6 +12,9 @@ const identify = {
 const skills = ['HTML', 'CSS', 'Javascript']
 const happy = true
 const finished = false
+const skillColor = 'navy'
+const fontWeight = 'bold'
+const textCase = 'uppercase'
 ---
 
 <html lang="en">
@@ -20,6 +24,17 @@ const finished = false
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
 	</head>
 	<body>
     <a href="/">Home</a>
@@ -33,7 +48,7 @@ const finished = false
       <li>趣味は
         {identify.hobbies.map(hobby => hobby)}
       です</li>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
     {happy && <p>Astroを学べて幸せです</p>}
     {finished ? <p>Astroを学びおえました</p> : <p>Astroは勉強中です</p>}
