@@ -1,5 +1,16 @@
 ---
+const pageTitle = '私について'
 
+const identify = {
+  firstName: 'yoh',
+  country: 'japan',
+  occupation: 'FE',
+  hobbies: ['skateboard']
+}
+
+const skills = ['HTML', 'CSS', 'Javascript']
+const happy = true
+const finished = false
 ---
 
 <html lang="en">
@@ -8,14 +19,23 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
-		<h1>私について</h1>
+		<h1>{pageTitle}</h1>
     <h2>私のAstroサイトについて</h2>
-    <p>これはAstroのチュートリアルサイトです</p>
+    <ul>
+      <li>私の名前は{identify.firstName}です</li>
+      <li>{identify.country}に住んでいて、{identify.occupation}として働いています</li>
+      <li>趣味は
+        {identify.hobbies.map(hobby => hobby)}
+      です</li>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+    {happy && <p>Astroを学べて幸せです</p>}
+    {finished ? <p>Astroを学びおえました</p> : <p>Astroは勉強中です</p>}
 	</body>
 </html>
