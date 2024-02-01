@@ -1,6 +1,7 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'My third blog'
-pubData: 2024-01-11
+pubDate: 2024-01-11
 description: 'This is my third blog'
 author: 'yoh'
 image:
@@ -8,9 +9,5 @@ image:
   alt: 'Astro logo'
 tags: ['astro']
 ---
-
-# My third blog
-
-投稿日：2024-01-11
 
 いいいい

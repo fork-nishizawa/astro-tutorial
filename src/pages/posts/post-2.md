@@ -1,6 +1,7 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'My second blog'
-pubData: 2024-01-11
+pubDate: 2024-01-11
 description: 'This is my second blog'
 author: 'yoh'
 image:
@@ -8,9 +9,5 @@ image:
   alt: 'Astro logo'
 tags: ['astro']
 ---
-
-# My second blog
-
-投稿日：2024-01-11
 
 ああああ
